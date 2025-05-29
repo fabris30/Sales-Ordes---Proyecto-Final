@@ -1,0 +1,62 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Items',
+                     typeNamePlural: 'Items',
+                     title: { type: #STANDARD,
+                              label: 'Items',
+                              value: 'Id' } } }
+
+
+annotate entity Z_C_ITEMS_BRIS
+    with 
+{
+      
+ @UI.facet: [ { id: 'Id',
+                  purpose: #STANDARD,
+                  type: #IDENTIFICATION_REFERENCE,
+                  label: 'Items',
+                  position: 10 }  ]
+    Id;
+    
+    
+    @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],
+         identification: [ { position: 10 } ] }
+    Name;
+    
+    
+    @UI: { lineItem:       [ { position: 20, importance: #MEDIUM } ],
+         identification: [ { position: 20 } ] }
+    Description;
+    
+    @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],
+         identification: [ { position: 30 } ] }
+    Releasedate;
+    
+    
+    @UI: { lineItem:       [ { position: 40, importance: #MEDIUM } ],
+         identification: [ { position: 40 } ] }
+    Discontinueddate;
+    
+    
+    @UI: { lineItem:       [ { position: 50, importance: #HIGH } ],
+         identification: [ { position: 50 } ] }
+    Price;
+    
+    @UI: { lineItem:       [ { position: 60, importance: #MEDIUM } ],
+         identification: [ { position: 60 } ] }
+    Height;
+    
+    @UI: { lineItem:       [ { position: 70, importance: #MEDIUM } ],
+         identification: [ { position: 70 } ] }
+    Width;
+    
+    @UI: { lineItem:       [ { position: 80, importance: #MEDIUM } ],
+         identification: [ { position: 80 } ] }
+    Depth;
+    
+    
+    @UI: { lineItem:       [ { position: 90, importance: #MEDIUM } ],
+         identification: [ { position: 90 } ] }
+    Quantity;
+    
+    
+}

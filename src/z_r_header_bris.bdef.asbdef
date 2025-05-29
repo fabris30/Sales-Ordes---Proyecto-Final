@@ -1,0 +1,60 @@
+managed implementation in class zbp_r_header_bris unique;
+strict ( 2 );
+
+define behavior for Z_R_HEADER_BRIS alias Header
+persistent table zheader_bris
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  association _ITEMS { create; }
+
+  field ( readonly ) Id;
+  field ( mandatory ) Email;
+
+  mapping for zheader_bris
+    {
+      Id           = id;
+      Email        = email;
+      Firstname    = firstname;
+      Lastname     = lastname;
+      Country      = country;
+      Createon     = createon;
+      Deliverydate = deliverydate;
+      Orderstatus  = orderstatus;
+      Imageurl     = imageurl;
+    }
+}
+
+define behavior for Z_R_ITEMS_BRIS alias Items
+persistent table zitems_bris
+lock dependent by _HEADER
+authorization dependent by _HEADER
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Pos, Id;
+  association _HEADER;
+
+  mapping for zitems_bris
+    {
+      Pos              = pos;
+      Id               = id;
+      Name             = name;
+      Description      = description;
+      Releasedate      = releasedate;
+      Discontinueddate = discontinueddate;
+      Price            = price;
+      CurrencyCode     = currency_code;
+      Height           = height;
+      Width            = width;
+      Depth            = depth;
+      Quantity         = quantity;
+      Unitofmeasure    = unitofmeasure;
+    }
+
+}

@@ -1,0 +1,5 @@
+CLASS zbp_r_header_bris DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF z_r_header_bris.
+ENDCLASS.
+
+CLASS zbp_r_header_bris IMPLEMENTATION.
+ENDCLASS.
